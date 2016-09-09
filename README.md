@@ -11,6 +11,7 @@ I wouldn't have been able or even had the idea to do this without
 
 * [arm-none-eabi-gcc][2] (It might be available through your package manager)
 * [curl][3]
+* [make][4]
 
 ## Usage
 
@@ -20,3 +21,4 @@ downloaded, split, and linked into an ELF.
 [1]: http://grangeia.io/2015/11/30/hacking-tomtom-runner-pt3/#runtime-debugging-with-qemu
 [2]: https://launchpad.net/gcc-arm-embedded
 [3]: https://curl.haxx.se/
+[4]: https://www.gnu.org/software/make/
