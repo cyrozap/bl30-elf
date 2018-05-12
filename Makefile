@@ -1,10 +1,12 @@
 AS := arm-none-eabi-as
 ASFLAGS := -mcpu=cortex-m3
+CC := arm-none-eabi-gcc
+CFLAGS := -mcpu=cortex-m3 -static -nostdlib
 
 all: bl30.elf
 
 bl30.elf: bl30.o rodata.o sram.o symbols.o
-	arm-none-eabi-gcc -mcpu="cortex-m3" -static -nostdlib -T ./linker.ld -o $@ $^
+	$(CC) $(CFLAGS) -T ./linker.ld -o $@ $^
 
 %.o: %.s %.bin
 	$(AS) $(ASFLAGS) -o $@ $<
