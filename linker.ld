@@ -1,4 +1,4 @@
-ENTRY(_bl30_start)
+ENTRY(EntryPoint)
 
 PHDRS
 {

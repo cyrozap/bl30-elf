@@ -1,10 +1,16 @@
+AS := arm-none-eabi-as
+ASFLAGS := -mcpu=cortex-m3
+
 all: bl30.elf
 
-bl30.elf: bl30.o rodata.o sram.o
+bl30.elf: bl30.o rodata.o sram.o symbols.o
 	arm-none-eabi-gcc -mcpu="cortex-m3" -static -nostdlib -T ./linker.ld -o $@ $^
 
 %.o: %.s %.bin
-	arm-none-eabi-gcc -mcpu="cortex-m3" -static -c $<
+	$(AS) $(ASFLAGS) -o $@ $<
+
+symbols.s: symbols.txt symbols_to_assembly.py
+	./symbols_to_assembly.py $< > $@
 
 bl30.bin: bl30-orig.bin
 	dd if=$< of=$@ bs=1 count=23212
