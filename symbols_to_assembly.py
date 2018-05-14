@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 '''\
-A simple utility to convert symbol exports to linker scripts.
+A simple utility to convert a list of symbols to assembly.
 '''
 
 import fileinput
