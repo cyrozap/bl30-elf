@@ -13,4 +13,5 @@ if __name__ == "__main__":
         addr = int(line[0], 16)
         label = line[1]
         sys.stdout.write(".global {}\n".format(label))
+        sys.stdout.write(".type {}, STT_FUNC\n".format(label))
         sys.stdout.write(".set {}, 0x{:08x}\n".format(label, addr))
