@@ -5,7 +5,11 @@ CFLAGS := -mcpu=cortex-m3 -static -nostdlib
 
 all: bl30.elf
 
-bl30.elf: bl30.o rodata.o sram.o symbols.o
+bl30.elf: bl30-unpatched.elf
+	python3 patch_elf.py -o $@ $<
+	chmod +x $@
+
+bl30-unpatched.elf: bl30.o rodata.o sram.o symbols.o
 	$(CC) $(CFLAGS) -T ./linker.ld -o $@ $^
 
 %.o: %.s %.bin
