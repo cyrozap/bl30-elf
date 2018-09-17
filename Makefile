@@ -16,7 +16,7 @@ bl30-unpatched.elf: bl30.o rodata.o sram.o symbols.o
 	$(AS) $(ASFLAGS) -o $@ $<
 
 symbols.s: symbols.txt symbols_to_assembly.py
-	./symbols_to_assembly.py $< > $@
+	python3 symbols_to_assembly.py $< > $@
 
 bl30.bin: bl30-orig.bin
 	dd if=$< of=$@ bs=1 count=23212
