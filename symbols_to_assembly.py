@@ -14,4 +14,4 @@ if __name__ == "__main__":
         label = line[1]
         sys.stdout.write(".global {}\n".format(label))
         sys.stdout.write(".type {}, STT_FUNC\n".format(label))
-        sys.stdout.write(".set {}, 0x{:08x}\n".format(label, addr))
+        sys.stdout.write(".set {}, 0x{:08x}\n".format(label, addr+1))
