@@ -27,6 +27,7 @@
 0x10000a08: __wait_evt
 0x10000ab4: task_wait_event
 0x10000abc: task_exit_trap
+0x10000ae8: task_set_event
 0x10000b54: svc_handler
 0x10000ce0: sub_10000ce0
 0x10000d0c: sub_10000d0c
