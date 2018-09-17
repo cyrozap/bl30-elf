@@ -24,6 +24,7 @@
 0x1000086c: not_task_start
 0x100008ac: task_print_list
 0x10000944: command_task_info
+0x10000a08: __wait_evt
 0x10000ab4: task_wait_event
 0x10000abc: task_exit_trap
 0x10000b54: svc_handler
@@ -192,7 +193,7 @@
 0x10005436: udelay
 0x1000544c: command_wait
 0x10005478: timer_arm
-0x100055d4: sub_100055d4
+0x100055d4: timer_cancel
 0x10005600: sub_10005600
 0x10005638: sub_10005638
 0x10005698: sub_10005698
